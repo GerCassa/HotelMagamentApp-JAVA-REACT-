@@ -15,7 +15,7 @@ public class Booking {
     private Long id;
 
     @Column
-    private Date date;
+    private String date;
 
     @Column
     private int length;
@@ -32,7 +32,7 @@ public class Booking {
     private Room room;
 
 
-    public Booking(Date date, int length, int people, Guest guest, Room room) {
+    public Booking(String date, int length, int people, Guest guest, Room room) {
         this.date = date;
         this.length = length;
         this.people = people;
@@ -48,11 +48,11 @@ public class Booking {
         this.id = id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

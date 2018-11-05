@@ -35,6 +35,11 @@ public class HotelManagementAppApplicationTests {
 		guestRepository.save(guest);
 	}
 
-
-
+	@Test
+	public void canCreateBooking() {
+		Guest guest = new Guest("Juan", "Perez", 30, "AASw21231", 123, "asdasd");
+		guestRepository.save(guest);
+		Booking booking = new Booking("25/11/2018", 3, 2, guest, null );
+		bookingRepository.save(booking);
+	}
 }
