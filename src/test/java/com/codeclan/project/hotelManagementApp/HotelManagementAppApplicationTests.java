@@ -42,4 +42,10 @@ public class HotelManagementAppApplicationTests {
 		Booking booking = new Booking("25/11/2018", 3, 2, guest, null );
 		bookingRepository.save(booking);
 	}
+
+	@Test
+	public void canCreateAndSaveRoom() {
+		Room room = new Room(1, 2);
+		roomRepository.save(room);
+	}
 }
