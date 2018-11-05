@@ -36,6 +36,9 @@ public class Guest {
     @OneToMany
     private List<Booking> bookings;
 
+    @ManyToOne
+    private Room room;
+
     public Guest(String fistName, String lastName, int age, String passport, int phoneNumber, String email) {
         this.fistName = fistName;
         this.lastName = lastName;
@@ -44,6 +47,7 @@ public class Guest {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.bookings = new ArrayList<>();
+        this.room = null;
     }
 
     public Long getId() {
