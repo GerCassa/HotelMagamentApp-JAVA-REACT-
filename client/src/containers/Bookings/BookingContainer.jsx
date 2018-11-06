@@ -1,6 +1,7 @@
 import React from 'react';
-import BookingsList from '../components/BookingsList';
-import BookingForm from '../components/BookingForm';
+import BookingsList from '../../components/Bookings/BookingsList';
+import BookingForm from '../../components/Bookings/BookingForm';
+import Request from '../../helpers/Requests';
 // import Booking from '../components/Bookings';
 
 class BookingContainer extends React.Component {
@@ -15,15 +16,20 @@ class BookingContainer extends React.Component {
   }
 
   componentDidMount() {
-      fetch("/bookings")
-      .then(response => response.json())
-      .then(data => this.setState({bookings: data._embedded.bookings}))       
-  }
+    let request = new Request()
+    request.get('/bookings').then((response) => {
+    this.setState({bookings: response._embedded.bookings})
+  })
+}
 
   handleBookingSubmit(newBooking) {
     // newBooking.id = Date.now();
     const updatedBooking = [...this.state.bookings, newBooking];
     this.setState({ bookings: updatedBooking });
+    let request = new Request()
+    request.post('/bookings', updatedBooking).then(() => {
+      window.location = '/bookings'
+    })
   }
 
       render() {
