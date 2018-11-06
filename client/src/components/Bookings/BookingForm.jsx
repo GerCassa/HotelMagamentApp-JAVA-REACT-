@@ -11,7 +11,10 @@ const BookingForm = (props) => {
       "firstName": event.target.firstName.value,
       "lastName": event.target.lastName.value
     }
+    console.log(props);
+    
     props.handleBookingPost(booking);
+
   }
 
   return(

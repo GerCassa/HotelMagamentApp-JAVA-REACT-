@@ -11,8 +11,6 @@ class BookingContainer extends React.Component {
       bookings: [],
       currentBooking: null
     };
-
-    this.handleBookingSubmit = this.handleBookingSubmit.bind(this)
   }
 
   componentDidMount() {
@@ -22,21 +20,14 @@ class BookingContainer extends React.Component {
   })
 }
 
-  handleBookingSubmit(newBooking) {
-    // newBooking.id = Date.now();
-    const updatedBooking = [...this.state.bookings, newBooking];
-    this.setState({ bookings: updatedBooking });
-    let request = new Request()
-    request.post('/bookings', updatedBooking).then(() => {
-      window.location = '/bookings'
-    })
-  }
+  //TODO: turn this into a single booking container.
+  //TODO: create list of all bookings.
 
       render() {
       return (
         <div>
           <h1 className="tittle">All Bookings</h1>
-          <BookingForm onBookingSubmit={this.handleBookingSubmit}/>
+          <BookingForm />
           <BookingsList bookings={this.state.bookings} />
           {/* <Booking Booking={this.state.bookings}/> */}
         </div>)
