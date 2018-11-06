@@ -21,7 +21,7 @@ class BookingContainer extends React.Component {
   }
 
   handleBookingSubmit(newBooking) {
-    newBooking.id = Date.now();
+    // newBooking.id = Date.now();
     const updatedBooking = [...this.state.bookings, newBooking];
     this.setState({ bookings: updatedBooking });
   }
