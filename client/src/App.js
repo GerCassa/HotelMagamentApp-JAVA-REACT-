@@ -15,7 +15,7 @@ class App extends Component {
           <React.Fragment>
             <Navbar />
             <Route exact path="/" component={Home} />
-            <Route path="/bookings" component={BookingListContainer} />
+            <Route exact path="/bookings" component={BookingListContainer} />
             <Route path="/bookings/new" component={BookingFormContainer} />
             <Route path="/rooms" component={RoomContainer} />
           </React.Fragment>

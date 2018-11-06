@@ -10,6 +10,9 @@ const Navbar = () => (
       <Link to="/bookings">Bookings</Link>
     </li>
     <li>
+      <Link to="/bookings/new">New Booking</Link>
+    </li>
+    <li>
       <Link to="/rooms">Rooms</Link>
     </li>
   </ul>

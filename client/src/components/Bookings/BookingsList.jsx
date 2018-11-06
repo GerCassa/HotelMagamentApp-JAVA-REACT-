@@ -14,6 +14,7 @@ const BookingsList = ({bookings}) => {
 
   return(
     <div className="bookings-list">
+    <h3>All Bookings</h3>
     {bookingNodes}
     </div>
   )
