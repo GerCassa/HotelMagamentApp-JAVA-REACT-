@@ -10,6 +10,8 @@ class BookingContainer extends React.Component {
       bookings: [],
       currentBooking: null
     };
+
+    this.handleBookingSubmit = this.handleBookingSubmit.bind(this)
   }
 
   componentDidMount() {
@@ -18,11 +20,17 @@ class BookingContainer extends React.Component {
       .then(data => this.setState({bookings: data._embedded.bookings}))       
   }
 
+  handleBookingSubmit(newBooking) {
+    newBooking.id = Date.now();
+    const updatedBooking = [...this.state.bookings, newBooking];
+    this.setState({ bookings: updatedBooking });
+  }
+
       render() {
       return (
         <div>
           <h1 className="tittle">All Bookings</h1>
-          <BookingForm/>
+          <BookingForm onBookingSubmit={this.handleBookingSubmit}/>
           <BookingsList bookings={this.state.bookings} />
           {/* <Booking Booking={this.state.bookings}/> */}
         </div>)
