@@ -11,9 +11,7 @@ class BookingFormContainer extends React.Component {
 
   handleBookingPost(booking){
     const request = new Request();
-    request.post('/bookings', booking).then(() => {
-      window.location = '/bookings';
-    })
+    request.post('/bookings', booking)
   }
 
   render(){
