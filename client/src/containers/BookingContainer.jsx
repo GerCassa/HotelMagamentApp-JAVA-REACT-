@@ -1,5 +1,6 @@
 import React from 'react';
 import BookingsList from '../components/BookingsList';
+import BookingForm from '../components/BookingForm';
 // import Booking from '../components/Bookings';
 
 class BookingContainer extends React.Component {
@@ -21,6 +22,7 @@ class BookingContainer extends React.Component {
       return (
         <div>
           <h1 className="tittle">All Bookings</h1>
+          <BookingForm/>
           <BookingsList bookings={this.state.bookings} />
           {/* <Booking Booking={this.state.bookings}/> */}
         </div>)
