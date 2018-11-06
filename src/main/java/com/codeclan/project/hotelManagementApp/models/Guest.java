@@ -50,6 +50,9 @@ public class Guest {
         this.room = null;
     }
 
+    public Guest() {
+    }
+
     public Long getId() {
         return id;
     }

@@ -40,6 +40,9 @@ public class Booking {
         this.room = null;
     }
 
+    public Booking() {
+    }
+
     public Long getId() {
         return id;
     }

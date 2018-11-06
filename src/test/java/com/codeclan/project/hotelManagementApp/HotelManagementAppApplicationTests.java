@@ -48,4 +48,16 @@ public class HotelManagementAppApplicationTests {
 		Room room = new Room(1, 2);
 		roomRepository.save(room);
 	}
+
+	@Test
+	public void canAssignRoomToBooking() {
+		Guest guest = new Guest("Juan", "Perez", 30, "AASw21231", 123, "asdasd");
+		guestRepository.save(guest);
+		Booking booking = new Booking("25/11/2018", 3, 2, guest, null );
+		bookingRepository.save(booking);
+		Room room = new Room(1, 2);
+		roomRepository.save(room);
+		booking.setRoom(room);
+		bookingRepository.save(booking);
+	}
 }
