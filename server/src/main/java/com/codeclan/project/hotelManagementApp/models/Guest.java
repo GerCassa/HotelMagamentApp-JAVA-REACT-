@@ -15,7 +15,7 @@ public class Guest {
     private Long id;
 
     @Column
-    private String fistName;
+    private String firstName;
 
     @Column
     private String lastName;
@@ -39,8 +39,8 @@ public class Guest {
     @ManyToOne
     private Room room;
 
-    public Guest(String fistName, String lastName, int age, String passport, int phoneNumber, String email) {
-        this.fistName = fistName;
+    public Guest(String firstName, String lastName, int age, String passport, int phoneNumber, String email) {
+        this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.passport = passport;
@@ -62,16 +62,18 @@ public class Guest {
     }
 
     public String getFistName() {
-        return fistName;
+        return firstName;
     }
 
     public void setFistName(String fistName) {
-        this.fistName = fistName;
+        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
+
+    public String getFullName() { return firstName + lastName; }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
