@@ -1,4 +1,4 @@
-package com.codeclan.project.hotelManagementApp.repositories;
+package com.codeclan.project.hotelManagementApp.repositories.RoomRepository;
 
 import com.codeclan.project.hotelManagementApp.models.Room;
 import org.springframework.data.jpa.repository.JpaRepository;
