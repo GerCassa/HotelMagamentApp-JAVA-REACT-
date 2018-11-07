@@ -21,7 +21,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/bookings" component={BookingListContainer} />
             <Route path="/bookings/new" component={BookingFormContainer} />
-            <Route exact path="/bookings/edit/:id" render = {(props) =>{
+            {/* <Route exact path="/bookings/edit/:id" render = {(props) =>{
             const id = props.match.params.id;
             return <BookingEditFormContainer id = {id} /> 
             }}/>
@@ -29,7 +29,7 @@ class App extends Component {
             const id = props.match.params.id;
             return <BookingContainer id = {id} />
             }}
-          />
+          /> */}
             <Route path="/rooms" component={RoomContainer} />
           </React.Fragment>
         </Router>
