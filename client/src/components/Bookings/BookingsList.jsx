@@ -1,21 +1,25 @@
 import React from 'react';
-import Booking from './Bookings';
+import Booking from './Booking';
 
 const BookingsList = ({bookings}) => {
   const bookingNodes = bookings.map( booking => {
-    return <Booking key={booking.id} 
-                    guest={booking.guest} 
-                    date={booking.date}
+    return (<li key={booking.id} className="boooking-item">
+              <div className="booking">
+            <Booking date={booking.date}
                     id={booking.id}
                     length={booking.length}
-                    people={booking.people}
-                     />
+                    people={booking.people}/>
+                </div>
+            </li>
+    )
   })
 
   return(
-    <div className="bookings-list">
+    <div>
     <h3>All Bookings</h3>
+    <ul className="bookings-list">
     {bookingNodes}
+    </ul>
     </div>
   )
 }

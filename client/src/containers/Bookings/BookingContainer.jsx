@@ -1,8 +1,9 @@
 import React from 'react';
 import BookingsList from '../../components/Bookings/BookingsList';
-import BookingForm from '../../components/Bookings/BookingForm';
+// import BookingForm from '../../components/Bookings/BookingForm';
 import Request from '../../helpers/Requests';
-// import Booking from '../components/Bookings';
+import BookingEditForm from '../../components/Bookings/BookingEditForm';
+import Booking from '../../components/Bookings/Booking';
 
 class BookingContainer extends React.Component {
   constructor(props) {
@@ -17,20 +18,31 @@ class BookingContainer extends React.Component {
     let request = new Request()
     request.get('/bookings').then((response) => {
     this.setState({bookings: response._embedded.bookings})
-  })
-}
+    })
+  }
 
-  //TODO: turn this into a single booking container.
-  //TODO: create list of all bookings.
+  handleDelete(id) {
+    const request = new Request();
+    const url = '/bookings/' + id;
+    request.delete(url).then(() => {
+      window.location = '/bookings'
+    })
+  }
 
-      render() {
-      return (
-        <div>
-          <h1 className="tittle">All Bookings</h1>
-          <BookingForm />
-          <BookingsList bookings={this.state.bookings} />
-          {/* <Booking Booking={this.state.bookings}/> */}
-        </div>)
+  handleEdit(id) {
+    window.location = '/bookings/edit/' + id
+  }
+
+
+  render() {
+  return (
+    <div>
+      <h1 className="tittle">All Bookings</h1>
+      <Booking onDelete={this.handleDelete} onEdit={this.handleEdit} />
+      <BookingsList bookings={this.state.bookings} />
+      <BookingEditForm Booking={this.state.bookings}/>
+    </div>
+    )
   }
 }
 

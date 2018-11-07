@@ -10,6 +10,19 @@ class BookingEditForm extends React.Component {
       firstName: props.booking.firstName,
       lastName: props.booking.lastName
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+      event.preventDefault();
+      const booking = {
+      "date": event.target.date.value,
+      "length": event.target.length.value,
+      "people": event.target.people.value,
+      "firstName": event.target.firstName.value,
+      "lastName": event.target.lastName.value
+    }
+    this.porps.handleBookingEdit(booking)
   }
 
   render(){
