@@ -1,3 +1,5 @@
+package com.codeclan.project.hotelManagementApp.configurations;
+
 import com.codeclan.project.hotelManagementApp.models.Booking;
 import com.codeclan.project.hotelManagementApp.models.Guest;
 import com.codeclan.project.hotelManagementApp.models.Room;

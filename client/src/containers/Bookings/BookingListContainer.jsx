@@ -5,14 +5,14 @@ import BookingsList from '../../components/Bookings/BookingsList';
 class BookingListContainer extends React.Component {
   constructor(props){
     super(props);
-    this.state={bookings: []}
+    this.state={bookings: []}    
   }
 
   componentDidMount(){
     const request = new Request();
     request.get('/bookings').then((data) => {
-      this.setState({bookings: data._embedded.bookings})
-    })
+      this.setState({bookings: data._embedded.bookings})        
+    })    
   }
 
 

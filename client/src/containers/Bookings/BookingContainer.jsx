@@ -1,30 +1,24 @@
 import React from 'react';
-import BookingsList from '../../components/Bookings/BookingsList';
-// import BookingForm from '../../components/Bookings/BookingForm';
 import Request from '../../helpers/Requests';
-import BookingEditForm from '../../components/Bookings/BookingEditForm';
-import Booking from '../../components/Bookings/Booking';
+import BookingDetails from '../../components/Bookings/BookingDetails';
 
 class BookingContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      bookings: [],
-      currentBooking: null
-    };
+    this.state = {booking: null}
   }
 
   componentDidMount() {
     let request = new Request()
-    request.get('/bookings').then((response) => {
-    this.setState({bookings: response._embedded.bookings})
+    request.get('/bookings/'+ this.props.id).then((response) => {
+    this.setState({booking: response})
+    // console.log(response);
     })
   }
 
   handleDelete(id) {
     const request = new Request();
-    const url = '/bookings/' + id;
-    request.delete(url).then(() => {
+    request.delete('/bookings/' + id).then(() => {
       window.location = '/bookings'
     })
   }
@@ -34,14 +28,18 @@ class BookingContainer extends React.Component {
   }
 
 
-  render() {
-  return (
-    <div>
-      <h1 className="tittle">All Bookings</h1>
-      <Booking onDelete={this.handleDelete} onEdit={this.handleEdit} />
-      <BookingsList bookings={this.state.bookings} />
-      <BookingEditForm Booking={this.state.bookings}/>
-    </div>
+  render() {   
+
+    if(!this.state.booking) {
+      return null;
+    }
+    // console.log(this.state.booking);
+
+    return(
+      <div className="booking">
+
+      <BookingDetails booking={this.state.booking} guests={this.state.booking.guests} handleDelete={this.handleDelete} handleEdit={this.handleEdit} />
+      </div>
     )
   }
 }
