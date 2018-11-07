@@ -5,11 +5,11 @@ import Navbar from './components/Navbar';
 
 import Home from './components/Home'
 
-import RoomContainer from './containers/RoomContainer';
+import RoomContainer from './containers/Rooms/RoomContainer';
 
 import BookingFormContainer from './containers/Bookings/BookingFormContainer';
 import BookingListContainer from './containers/Bookings/BookingListContainer';
-// import BookingEditFormContainer from './containers/Bookings/BookingEditFormContainer';
+import BookingEditFormContainer from './containers/Bookings/BookingEditFormContainer';
 import BookingContainer from './containers/Bookings/BookingContainer';
 
 class App extends Component {
@@ -22,11 +22,11 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/bookings" component={BookingListContainer} />
             <Route exact path="/bookings/new" component={BookingFormContainer} />
-            {/* <Route exact path="/bookings/edit/:id" render = {(props) =>{
+            <Route exact path="/bookings/edit/:id" render = {(props) =>{
             const id = props.match.params.id;
             return <BookingEditFormContainer id = {id} /> 
-            }}/> */}
-            <Route exact path="/bookings/details/:id" render = {(props) =>{
+            }}/>
+            <Route exact path="/bookings/:id" render = {(props) =>{
             const id = props.match.params.id;
             return <BookingContainer id = {id} />
             }}

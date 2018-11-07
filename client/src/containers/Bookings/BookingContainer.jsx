@@ -12,7 +12,6 @@ class BookingContainer extends React.Component {
     let request = new Request()
     request.get('/bookings/'+ this.props.id).then((response) => {
     this.setState({booking: response})
-    // console.log(response);
     })
   }
 
@@ -33,7 +32,6 @@ class BookingContainer extends React.Component {
     if(!this.state.booking) {
       return null;
     }
-    // console.log(this.state.booking);
 
     return(
       <div className="booking">

@@ -9,7 +9,7 @@ const Booking = (booking) => {
 
   return (
     <React.Fragment>
-      <Link to={"/bookings/details/" + booking.id} className="name">
+      <Link to={"/bookings/" + booking.id} className="name">
         Booking: {booking.id}
       </Link>
       <p>Date: {booking.date}</p>
