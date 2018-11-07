@@ -31,10 +31,14 @@ public class DataLoader implements ApplicationRunner {
         Booking booking = new Booking("25/11/2018", 3, 2, guest, null );
         bookingRepository.save(booking);
 
-        Room room = new Room(1, 2);
-        roomRepository.save(room);
+        Room room1 = new Room(1, 2);
+        roomRepository.save(room1);
+        Room room2 = new Room(2, 3);
+        roomRepository.save(room2);
+        Room room3 = new Room(3, 4);
+        roomRepository.save(room3);
 
-        booking.setRoom(room);
+        booking.setRoom(room1);
         bookingRepository.save(booking);
     }
 }
