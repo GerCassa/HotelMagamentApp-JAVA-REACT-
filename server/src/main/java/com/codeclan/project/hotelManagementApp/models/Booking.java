@@ -24,7 +24,7 @@ public class Booking {
     private int people;
 
     @ManyToOne
-    @JoinColumn(name = "guest_id", nullable = false)
+    @JoinColumn(name = "guest_id")
     private Guest guest;
 
     @ManyToOne

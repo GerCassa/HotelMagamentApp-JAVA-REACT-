@@ -17,6 +17,8 @@ const BookingForm = (props) => {
 
   }
 
+    //TODO: figure out why new booking is not saving to database.
+
   return(
     <form onSubmit={handleSubmit}>
       <input type="text" placeholder="Date" name="date" />
