@@ -28,7 +28,7 @@ public class DataLoader implements ApplicationRunner {
         Guest guest = new Guest("Juan", "Perez", 30, "AASw21231", 123, "asdasd");
         guestRepository.save(guest);
 
-        Booking booking = new Booking("25/11/2018", 3, 2, guest, null );
+        Booking booking = new Booking("25-11-2018", 3, 2, guest, null );
         bookingRepository.save(booking);
 
         Room room1 = new Room(1, 2);

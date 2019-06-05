@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 const BookingForm = (props) => {  
 
   function handleSubmit(event) {
@@ -21,24 +23,28 @@ const BookingForm = (props) => {
   //I will use the code above when I build the create guest form.
 
   return(
+    <div>
+      
     <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Date" name="date" />
-
-      <input type="number" placeholder="How many nights" name="length" />
-
-      <input type="number" placeholder="How many guest" name="people" />
-
+      <label>Date</label>
+     <input type="text" placeholder="Date in DD-MM-YYYY" name="date" className="datepicker" />    
+      <label>Duration</label>
+      <input type="number" placeholder="How many nights" name="length" min= "0" />
+      <label>Guests</label>
+      <input type="number" placeholder="How many guest" name="people" min= "0" />
+      <label>First Name</label>
       <input type="text" placeholder="First Name" name="guest" />
-
+      <label>Last Name</label>
       <input type="text" placeholder="Last Name" name="guest" />
 
       {/* <select name="guest" placeholder="Guest Last Name">
       {guestsOptions}
       </select> SAVING THIS FOR WHEN I CREATE THE NEW GUEST FORM */}
 
-      <input type="submit" value="Save Booking" />
+      <input type="submit" value="Save Booking" id="submitButton" />
     </form>
-    )
-}
-
+    </div>
+      )
+  }
+  
 export default BookingForm;

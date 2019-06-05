@@ -5,7 +5,7 @@ import BookingsList from '../../components/Bookings/BookingsList';
 class BookingListContainer extends React.Component {
   constructor(props){
     super(props);
-    this.state={bookings: []}    
+    this.state={bookings: []}  
   }
 
   componentDidMount(){
@@ -15,10 +15,11 @@ class BookingListContainer extends React.Component {
     })    
   }
 
-
   render() {
-    return(
+    return(      
+      <div>
       <BookingsList bookings={this.state.bookings} />  
+      </div>
     )
   }
 }

@@ -17,12 +17,11 @@ const BookingDetails = (booking) => {
   // })
 
   return (
-    <div>
-        <h3>Booking: {booking.booking.id}</h3>
+    <div id="bookingDetails">
+        <h3>Booking ID: {booking.booking.id}</h3>
         <p>Date: {booking.booking.date}</p>
         <p>Nights: {booking.booking.length}</p>
         <p>Guests: {booking.booking.people}</p>
-        {/* <ul>{guests}</ul> */}
       <button onClick={onDelete}>Delete Booking</button>
       <button onClick={onEdit}>Edit Booking</button>
     </div>

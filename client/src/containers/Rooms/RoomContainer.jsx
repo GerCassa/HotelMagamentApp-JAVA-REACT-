@@ -11,7 +11,7 @@ class RoomContainer extends React.Component {
 
   render() {
     return(
-      <h2>This will be a pretty grid with all the rooms. I need to do it.</h2>
+      <h2>This will be a pretty grid with all the rooms. Coming soon</h2>
     )
   }
 }

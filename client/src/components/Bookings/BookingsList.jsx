@@ -3,23 +3,22 @@ import Booking from './Booking';
 
 const BookingsList = ({bookings}) => {
   const bookingNodes = bookings.map( booking => {
-    return (<li key={booking.id} className="boooking-item">
-              <div className="booking">
+    return (<div key={booking.id} id="bookingItem">
             <Booking date={booking.date}
                     id={booking.id}
                     length={booking.length}
                     people={booking.people}/>
                 </div>
-            </li>
+            
     )
   })
 
   return(
-    <div>
-    <h3>All Bookings</h3>
-    <ul className="bookings-list">
-    {bookingNodes}
-    </ul>
+    <div id="wrapper">
+      <h2>All Bookings</h2>
+        <div id="bookingTable">
+          {bookingNodes}
+        </div>
     </div>
   )
 }

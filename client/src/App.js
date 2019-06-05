@@ -11,6 +11,8 @@ import BookingFormContainer from './containers/Bookings/BookingFormContainer';
 import BookingListContainer from './containers/Bookings/BookingListContainer';
 import BookingEditFormContainer from './containers/Bookings/BookingEditFormContainer';
 import BookingContainer from './containers/Bookings/BookingContainer';
+import BookingsPerDateContainer from './containers/Bookings/BookingsPerDateContainer';
+
 
 class App extends Component {
   render() {
@@ -26,6 +28,12 @@ class App extends Component {
             const id = props.match.params.id;
             return <BookingEditFormContainer id = {id} /> 
             }}/>
+            <Route exact path="/bookings/perDate" component={BookingsPerDateContainer} />
+            <Route exact path="/bookings/perDate/:date" render = {(props) => {
+            const date = props.match.params.date;
+            return <BookingsPerDateContainer date = {date} />
+          }}
+          />
             <Route exact path="/bookings/:id" render = {(props) =>{
             const id = props.match.params.id;
             return <BookingContainer id = {id} />
