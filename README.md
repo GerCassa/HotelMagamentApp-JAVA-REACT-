@@ -1,2 +1,7 @@
 # HotelMagamentApp-JAVA-REACT-
-Last of my CodeClan Projects. Basic Bookings App with a JAVA backend and JS REACT front-end.
+Bookings App with a JAVA backend and JS REACT front-end.
+
+
+This app is build with a Mongo DB database. The front end is mostly React for functionalty and style.
+
+This app can easily be adapted for multiple uses. 
